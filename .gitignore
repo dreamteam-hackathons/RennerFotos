@@ -1,5 +1,2 @@
-database/*
-!database/.gitkeep
-
 database-imagens/*
 !database-imagens/.gitkeep
