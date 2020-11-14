@@ -1,10 +1,15 @@
 # RennerFotos
 See photos of real people using ors product.
 
-# How run renner-bot?
+# rennerfotos-robot
+
+## How run?
 - `cd renner-fotos`
 - `npm install`
 - `npm run start`
+
+## 3rd party
+- [venom-bot](https://www.npmjs.com/package/venom-bot)
 
 # Contrubuting
 Everybody are wellcome.
