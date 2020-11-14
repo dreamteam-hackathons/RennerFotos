@@ -3,10 +3,24 @@
 const bot = require("venom-bot");
 const banco = require("./banco");
 const stages = require("./stages");
+const fs = require('fs');
+const mime = require('mime-types');
+const { v4: uuidv4 } = require('uuid');
 
 bot.create().then((client) => start(client));
 function start(client) {
-  client.onMessage((message) => {
+  client.onMessage(async (message) => {
+    console.log("Receved message from:", message.from);
+
+    if (message.isMedia === true || message.isMMS === true) {
+      const buffer = await client.decryptFile(message);
+      
+      const fileName = `downloaded-imagens/whatsapp-${uuidv4()}.${mime.extension(message.mimetype)}`;
+      await fs.writeFile(fileName, buffer, (err) => {
+        console.error(err);
+      });
+    }
+
     let resp = stages.step[getStage(message.from)].obj.execute(
       message.from,
       message.body,
