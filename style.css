@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -8,6 +12,22 @@ main h1 {
   color: #e30613;
 }
 
+main input {
+  width: 98%;
+  height: 48px;
+  font-size: 18px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  outline: 0;
+}
+
+main input::placeholder {
+  font-size: 18px;
+  color: #999;
+}
+
 section {
   display: flex;
   flex-wrap: wrap;
@@ -16,8 +36,8 @@ section {
 
 li {
   flex: 1;
-  min-width: 168px;
-  max-width: 168px;
+  min-width: 49%;
+  max-width: 49%;
   list-style: none;
 }
 
