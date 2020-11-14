@@ -8,7 +8,7 @@ See photos of real people using ors product.
 ### Environment vars
 Use .env
 - MONGODB_URI
-- POS_VENDA_NUMERO
+- POS_VENDA_NUMERO (Format 000000000000@c.us)
 
 ### How run?
 - `cd rennerfotos-robot`
@@ -27,6 +27,9 @@ Use .env
 - `cd rennerfotos-backend`
 - `npm install`
 - `npm start`
+
+### 3rd party
+- [restify](https://www.npmjs.com/package/restify)
 
 ## rennerfotos-web (A.k.a Frontend)
 ### How run?

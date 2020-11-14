@@ -12,8 +12,6 @@
   "author": "Dream team Megahack 5",
   "license": "MIT",
   "dependencies": {
-    "csv-write-stream": "^2.0.0",
-    "csvtojson": "^2.0.10",
     "restify": "^8.5.1"
   },
   "devDependencies": {

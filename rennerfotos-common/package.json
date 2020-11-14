@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "none",
+  "repository": "git@github.com:dreamteam-hackathons/RennerFotos.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "mongodb": "^3.6.3"
-  },
-  "devDependencies": {
+    "mongodb": "^3.6.3",
     "dotenv": "^8.2.0"
   }
 }
