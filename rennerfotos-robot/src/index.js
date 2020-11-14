@@ -4,9 +4,6 @@ const mime = require('mime-types');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config()
 
-const banco = require("./banco");
-const stages = require("./stages");
-
 bot.create().then((client) => start(client));
 
 async function  start(client) {
