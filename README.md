@@ -6,7 +6,7 @@ See photos of real people using ors product.
 ## How run?
 - `cd renner-fotos`
 - `npm install`
-- `npm run start`
+- `npm start`
 
 ## 3rd party
 - [venom-bot](https://www.npmjs.com/package/venom-bot)
