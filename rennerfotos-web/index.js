@@ -15,7 +15,7 @@ async function filter() {
   const response = await fetch('./mocks/mock.json');
   const data = await response.json();
 
-  const filterData = data.filter(data => data.nome.includes(filter));
+  const filterData = data.filter(data => data.nome.toLowerCase().includes(filter.toLowerCase()));
 
   const htmlList = filterData.map(({ images }) => {
     return images.map(image => `<li><img src="${image}"></li>`).join('');
