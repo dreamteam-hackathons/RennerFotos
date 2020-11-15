@@ -7,6 +7,9 @@ let data = [];
   try {
     const response = await fetch(`${baseUrl}/v1/fotos`);
     data = await response.json();
+
+    document.getElementById('loading').hidden = true;
+
     htmlList = getImages(data);
   } catch (err) {
     htmlList = ['<h2>Houve uma falha ao obter as fotos, tente novamente mais tarde.</h2>']
