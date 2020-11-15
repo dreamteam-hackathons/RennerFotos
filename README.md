@@ -28,6 +28,7 @@ Use .env
 ### Environment vars
 Use .env
 - MONGODB_URI (Exemple mongodb+srv://<username>:<password>@cluster0.zbtgl.mongodb.net/<dbname>?retryWrites=true&w=majority)
+- PATH_DATABASE_IMAGENS (Exemple /home/<username>/Dev/dreamteam-hackathons/RennerFotos/rennerfotos-robot/database-imagens/)
 
 ### How run?
 - `cd rennerfotos-backend`
