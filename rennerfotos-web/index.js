@@ -7,7 +7,7 @@ let data = [];
   try {
     const response = await fetch(`${baseUrl}/v1/fotos`);
     data = await response.json();
-    htmlList = data.map(({ image }) => `<li><img src="${baseUrl}${image}"></li>`).join('');
+    htmlList = getImages(data);
   } catch (err) {
     htmlList = ['<h2>Houve uma falha ao obter as fotos, tente novamente mais tarde.</h2>']
   }
@@ -15,12 +15,16 @@ let data = [];
   document.querySelector('section').innerHTML = htmlList;
 })()
 
+function getImages(data) {
+  return data.map(({ image }) => `<li><img src="${baseUrl}${image}"></li>`).join('');
+}
+
 async function filter() {
   const filter = document.getElementById('filter').value;
 
   const filterData = data.filter(data => data.nome.toLowerCase().includes(filter.toLowerCase()));
 
-  const htmlList = filterData.map(({ image }) => `<li><img src="${image}"></li>`).join('');
+  const htmlList = getImages(filterData);
 
   document.querySelector('section').innerHTML = htmlList;
 }
