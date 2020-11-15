@@ -41,7 +41,7 @@ async function  start(client) {
       await rennerFotosRepository.trySave({
         "nome": "Calça Sarja com Puídos Azul",
         "checkoutUrl": "https://www.lojasrenner.com.br/p/calca-sarja-com-puidos/-/A-552590686-br.lr?sku=552590740",
-        "images": [ "https://img.lojasrenner.com.br/item/552590731/large/10.jpg" ],
+        "image": "https://img.lojasrenner.com.br/item/552590731/large/10.jpg",
         "status": "pendendeModeracao"
       });
 
