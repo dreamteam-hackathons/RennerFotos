@@ -11,7 +11,7 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
  
-server.get('/fotos', async function (req, res, next) {
+server.get('/v1/fotos', async function (req, res, next) {
   res.json(await rennerFotosRepository.getAll());
 
   return next();
