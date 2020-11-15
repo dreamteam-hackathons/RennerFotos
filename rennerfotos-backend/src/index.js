@@ -1,4 +1,5 @@
 var restify = require('restify');
+require('dotenv').config()
 
 var rennerFotosRepository = require('../../rennerfotos-common/Repositories/rennerfotos.repository');
  
@@ -20,10 +21,15 @@ server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
  
 server.get('/v1/fotos', async function (req, res, next) {
-  res.json(await rennerFotosRepository.getAll());
+  res.json(await rennerFotosRepository.getAllPhotos());
 
   return next();
 });
+
+server.get('/imagens/*', restify.plugins.serveStatic({
+  directory: process.env.PATH_DATABASE_IMAGENS,
+  appendRequestPath: false
+}));
  
 server.listen(8080, function () {
   console.log('%s listening at %s', server.name, server.url);

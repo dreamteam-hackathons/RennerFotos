@@ -4,31 +4,29 @@ const mime = require('mime-types');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config()
 
-var rennerFotosRepository = require('../../rennerfotos-common/Repositories/rennerfotos.repository');
+const rennerFotosRepository = require('../../rennerfotos-common/Repositories/rennerfotos.repository');
+let pedido = null;
 
 bot.create().then((client) => start(client));
 
 async function  start(client) {
+  pedido = rennerFotosRepository.getPedido();
+
   await client
-    .sendText(process.env.POS_VENDA_NUMERO, 'Vimos que você recebeu um pedido da Lojas Renner a uma semana você não gostária de participar do RennerFotos?')
-    .then((result) => {
-      console.log('Result: ', result);
-    })
+    .sendText(process.env.POS_VENDA_NUMERO, `Vimos que você fez um pedido da Lojas Renner do produto ${pedido} a uma semana você não gostária de participar do RennerFotos?`)
     .catch((erro) => {
       console.error('Error when sending: ', erro);
     });
 
   await client
-    .sendText(process.env.POS_VENDA_NUMERO, 'Nos envie uma foto com o produto que você comprou na Lojas Renner e ela aparecerá no RennerFotos e você ganhará condições explusivas para compras no site 🤑.')
-    .then((result) => {
-      console.log('Result: ', result);
-    })
+    .sendText(process.env.POS_VENDA_NUMERO, 'Nos envie uma foto com o produto que você comprou na Lojas Renner e ela aparecerá no RennerFotos e você ganhará condições exclusivas para compras no site 🤑.')
     .catch((erro) => {
       console.error('Error when sending: ', erro);
     });
 
   client.onMessage(async (message) => {
-    console.log("Receved message from:", message.from);
+    console.log('Receved message from: ', message.from);
+    console.log('Pedido: ', pedido);
 
     if (message.isMedia === true || message.isMMS === true) {
       const buffer = await client.decryptFile(message);
@@ -38,10 +36,10 @@ async function  start(client) {
         console.error('Error when writeFile: ', err);
       });
 
-      await rennerFotosRepository.trySave({
-        "nome": "Calça Sarja com Puídos Azul",
+      await rennerFotosRepository.trySavePhotos({
+        "nome": pedido,
         "checkoutUrl": "https://www.lojasrenner.com.br/p/calca-sarja-com-puidos/-/A-552590686-br.lr?sku=552590740",
-        "image": "https://img.lojasrenner.com.br/item/552590731/large/10.jpg",
+        "image": `/imagens/${fileName}`,
         "status": "pendendeModeracao"
       });
 
