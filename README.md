@@ -32,7 +32,7 @@ Use .env
 ### How run?
 - `cd rennerfotos-backend`
 - `npm install`
-- `npm start`
+- `npm start` # run on http://localhost:8080/v1/fotos
 
 ### 3rd party
 - [restify](https://www.npmjs.com/package/restify)
@@ -40,7 +40,7 @@ Use .env
 ## rennerfotos-web (A.k.a Frontend)
 ### How run?
 - `cd rennerfotos-web`
-- `npx lite-server`
+- `npx lite-server` # run on http://localhost:3000/ and UI of Browsersync http://localhost:3001/
 
 ## Contrubuting
 Everybody are wellcome.
