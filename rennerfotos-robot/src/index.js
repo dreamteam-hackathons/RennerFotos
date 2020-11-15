@@ -4,6 +4,8 @@ const mime = require('mime-types');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config()
 
+var rennerFotosRepository = require('../../rennerfotos-common/Repositories/rennerfotos.repository');
+
 bot.create().then((client) => start(client));
 
 async function  start(client) {
@@ -31,13 +33,20 @@ async function  start(client) {
     if (message.isMedia === true || message.isMMS === true) {
       const buffer = await client.decryptFile(message);
       
-      const fileName = `downloaded-imagens/whatsapp-${uuidv4()}.${mime.extension(message.mimetype)}`;
-      await fs.writeFile(fileName, buffer, (err) => {
-        console.error('Error when writeFile: ', erro);
+      const fileName = `whatsapp-${uuidv4()}.${mime.extension(message.mimetype)}`;
+      await fs.writeFile(`database-imagens/${fileName}`, buffer, (err) => {
+        console.error('Error when writeFile: ', err);
       });
 
-      client.sendText(message.from, "Obrigado por enviar sua foto embreve ela aparecerá no RennerFotos.");
-      client.sendText(message.from, "Veja sua foto no RennerFotos https://dreamteam-hackathons.github.io/RennerFotos");
+      await rennerFotosRepository.trySave({
+        "nome": "Calça Sarja com Puídos Azul",
+        "checkoutUrl": "https://www.lojasrenner.com.br/p/calca-sarja-com-puidos/-/A-552590686-br.lr?sku=552590740",
+        "images": [ "https://img.lojasrenner.com.br/item/552590731/large/10.jpg" ],
+        "status": "pendendeModeracao"
+      });
+
+      await client.sendText(message.from, "Obrigado por enviar sua foto embreve ela aparecerá no RennerFotos.");
+      await client.sendText(message.from, "Veja sua foto no RennerFotos https://dreamteam-hackathons.github.io/RennerFotos");
     }
   });
 

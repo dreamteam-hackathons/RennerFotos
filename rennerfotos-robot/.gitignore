@@ -1,3 +1,6 @@
 node_modules
 .env
 tokens
+
+database-imagens/*
+!database-imagens/.gitkeep

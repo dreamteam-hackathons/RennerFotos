@@ -3,12 +3,18 @@ See photos of real people using ors product.
 
 ## Requeriments
 - [Node.JS](https://nodejs.org/en/) _tested v10.19.0_
+- For MongoDB we use https://cloud.mongodb.com it's free.
+
+## rennerfotos-common (Need for rennerfotos-robot and rennerfotos-backend)
+### How install? 
+- `cd rennerfotos-common`
+- `npm install`
 
 ## rennerfotos-robot
 ### Environment vars
 Use .env
-- MONGODB_URI
-- POS_VENDA_NUMERO (Format 000000000000@c.us)
+- MONGODB_URI (Exemple mongodb+srv://<username>:<password>@cluster0.zbtgl.mongodb.net/<dbname>?retryWrites=true&w=majority)
+- POS_VENDA_NUMERO (Exemple 000000000000@c.us)
 
 ### How run?
 - `cd rennerfotos-robot`
@@ -21,7 +27,7 @@ Use .env
 ## rennerfotos-backend
 ### Environment vars
 Use .env
-- MONGODB_URI
+- MONGODB_URI (Exemple mongodb+srv://<username>:<password>@cluster0.zbtgl.mongodb.net/<dbname>?retryWrites=true&w=majority)
 
 ### How run?
 - `cd rennerfotos-backend`
