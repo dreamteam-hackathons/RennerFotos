@@ -3,9 +3,23 @@
 }
 
 main {
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main .title {
+  display: flex;
+  position: relative;
+}
+
+main .title img {
+  width: 50px;
+  position: absolute;
+  left: -80px;
+  top: 20px;
 }
 
 main h1 {
@@ -30,6 +44,7 @@ main input::placeholder {
 
 section {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: .4rem;
 }
@@ -45,4 +60,37 @@ li img {
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+@media (max-width: 365px) { 
+  main h1 {
+    font-size: 24px;
+  }
+
+  li {
+    min-width: 48%;
+    max-width: 48%;
+  }
+
+  main input {
+    height: 38px;
+    font-size: 14px;
+  }
+
+  main input::placeholder {
+    font-size: 14px;
+  }
+
+  main .title img {
+    width: 35px;
+    left: -40px;
+    top: 15px;
+  }
+}
+
+@media (min-width: 500px) { 
+  li {
+    min-width: 15.8%;
+    max-width: 15.8%;
+  }
 }
