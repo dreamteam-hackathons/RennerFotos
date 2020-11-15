@@ -1,13 +1,13 @@
-const baseUrl = 'https://neiesc-31b78051.localhost.run/v1';
+const baseUrl = 'https://neiesc-31b78051.localhost.run';
 let data = [];
 
 (async () => {
   let htmlList = [];
 
   try {
-    const response = await fetch(`${baseUrl}/fotos`);
+    const response = await fetch(`${baseUrl}/v1/fotos`);
     data = await response.json();
-    htmlList = data.map(({ image }) => `<li><img src="${image}"></li>`).join('');
+    htmlList = data.map(({ image }) => `<li><img src="${baseUrl}${image}"></li>`).join('');
   } catch (err) {
     htmlList = ['<h2>Houve uma falha ao obter as fotos, tente novamente mais tarde.</h2>']
   }
