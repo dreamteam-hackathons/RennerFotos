@@ -1,10 +1,8 @@
 (async () => {
-  const response = await fetch('./mocks/mock.json');
+  const response = await fetch('http://neiesc-31b78051.localhost.run/v1/fotos');
   const data = await response.json();
 
-  const htmlList = data.map(({ images }) => {
-    return images.map(image => `<li><img src="${image}"></li>`).join('')
-  }).join('');
+  const htmlList = data.map(({ image }) => `<li><img src="${image}"></li>`).join('');
 
   document.querySelector('section').innerHTML = htmlList;
 })()
@@ -17,9 +15,7 @@ async function filter() {
 
   const filterData = data.filter(data => data.nome.toLowerCase().includes(filter.toLowerCase()));
 
-  const htmlList = filterData.map(({ images }) => {
-    return images.map(image => `<li><img src="${image}"></li>`).join('');
-  }).join('');
+  const htmlList = filterData.map(({ image }) => `<li><img src="${image}"></li>`).join('');
 
   document.querySelector('section').innerHTML = htmlList;
 }
