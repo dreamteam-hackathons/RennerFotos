@@ -2,25 +2,16 @@
   {
     "nome": "produto-calça",
     "checkoutUrl": "https://lojasrenner.com.br/add/produto-calca",
-    "images": [
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg",
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg",
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg"
-    ]
+    "image": "https://urlOfImagem"
   },
   {
-    "nome": "produto-camiseta",
+    "nome": "produto-calça",
     "checkoutUrl": "https://lojasrenner.com.br/add/produto-camiseta",
-    "images": [
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg"
-    ]
+    "image": "https://urlOfImagem"
   },
   {
     "nome": "produto-camiseta2",
     "checkoutUrl": "https://lojasrenner.com.br/add/produto-camiseta2",
-    "images": [
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg",
-      "https://img.elo7.com.br/product/main/20E2B29/teste-teste.jpg"
-    ]
+    "image": "https://urlOfImagem"
   }
 ]
