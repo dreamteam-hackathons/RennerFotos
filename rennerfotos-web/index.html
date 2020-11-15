@@ -10,8 +10,11 @@
 
 <body>
   <main>
-    <h1><em>Minhas Fotos</em></h1>
-    <input type="text" id="filter" placeholder="Pesquise pelo nome da peça" onkeyup="filter()" />
+    <div class="title">
+      <img src="assets/search.svg" width="50" alt="Search Icon" onclick="toggleFilter()" />
+      <h1><em>Renner Fotos</em></h1>
+    </div>
+    <input type="text" id="filter" placeholder="Pesquise pelo nome da peça" onkeyup="filter()" hidden />
     <section></section>
   </main>
 

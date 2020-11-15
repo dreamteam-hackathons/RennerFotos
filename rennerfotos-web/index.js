@@ -23,3 +23,9 @@ async function filter() {
 
   document.querySelector('section').innerHTML = htmlList;
 }
+
+function toggleFilter() {
+  const filterElement = document.getElementById('filter');
+
+  filterElement.hidden = !filterElement.hidden;
+}

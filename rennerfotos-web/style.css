@@ -8,6 +8,16 @@ main {
   align-items: center;
 }
 
+main .title {
+  position: relative;
+}
+
+main .title img {
+  position: absolute;
+  left: -80px;
+  top: 20px;
+}
+
 main h1 {
   color: #e30613;
 }
