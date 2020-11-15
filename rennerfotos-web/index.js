@@ -1,17 +1,22 @@
-(async () => {
-  const response = await fetch('http://neiesc-31b78051.localhost.run/v1/fotos');
-  const data = await response.json();
+const baseUrl = 'http://neiesc-31b78051.localhost.run/v1';
+let data = [];
 
-  const htmlList = data.map(({ image }) => `<li><img src="${image}"></li>`).join('');
+(async () => {
+  let htmlList = [];
+
+  try {
+    const response = await fetch(`${baseUrl}/fotos`);
+    data = await response.json();
+    htmlList = data.map(({ image }) => `<li><img src="${image}"></li>`).join('');
+  } catch (err) {
+    htmlList = ['<h2>Houve uma falha ao obter as fotos, tente novamente mais tarde.</h2>']
+  }
 
   document.querySelector('section').innerHTML = htmlList;
 })()
 
 async function filter() {
   const filter = document.getElementById('filter').value;
-
-  const response = await fetch('./mocks/mock.json');
-  const data = await response.json();
 
   const filterData = data.filter(data => data.nome.toLowerCase().includes(filter.toLowerCase()));
 
