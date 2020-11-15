@@ -1,4 +1,4 @@
-const baseUrl = 'http://neiesc-31b78051.localhost.run/v1';
+const baseUrl = 'https://neiesc-31b78051.localhost.run/v1';
 let data = [];
 
 (async () => {
