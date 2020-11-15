@@ -1,20 +1,17 @@
 {
-  "name": "rennerfotos-backend",
+  "name": "rennerfotos-common",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "none",
   "repository": "git@github.com:dreamteam-hackathons/RennerFotos.git",
   "scripts": {
-    "start": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Dream team Megahack 5",
+  "author": "",
   "license": "MIT",
   "dependencies": {
-    "restify": "^8.5.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
+    "mongodb": "^3.6.3",
+    "dotenv": "^8.2.0"
   }
 }
